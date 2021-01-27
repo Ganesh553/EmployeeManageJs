@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap"
+    rel="stylesheet">
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/signup.js"></script> 
+    <!-- <script src="../db.json"></script> -->
+    <script>
+        function clickinner() { // Target refers to the clicked element
+            location.href='dashBoard.html';
+        };
+    </script>
+
+
+</head>
+<body>
+    <div class="login-box">
+        <img src="assert/avatar.png" class="avatar"> 
+        <div class="textbox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input id="fname" type = "text" placeholder="FirstName" REQUIRED>
+        </div>
+        <div class="textbox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input id="lname" type = "text" placeholder="LastName"REQUIRED>
+        </div>
+        <div class="textbox">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+            <input id="mail" type = "text" placeholder="Mail" REQUIRED>
+        </div>
+        <div class="textbox">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+            <input id='salary' type = "text" placeholder="Salary"REQUIRED>
+        </div>
+        <div class="textbox">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <input id="department" type = "text" placeholder="Department"REQUIRED>
+        </div>
+        <input class="btn" id="add-user" type="button" onclick="addUser();clickinner();" value="Sign_up">
+    </div>
+</body>
+</html>

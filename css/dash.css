@@ -1,0 +1,81 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+
+ body{
+    margin : 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-size: cover;
+}
+*{
+  box-sizing: border-box;
+}
+.continer{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color:white
+}
+#header{
+  background-color: rgb(3, 1, 22); 
+  color: #fff;
+}
+h1{
+  font-family: cursive;
+  font-weight: 600;
+  text-align: center;
+  background-color: #050230;
+  color: #fff;
+  padding: 10px 0px;
+}
+
+.text-button{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: rgb(3, 3, 46); 
+  color: white;
+  height: 40px;
+  width: 160px;  
+  margin-top: -20px; 
+  margin-left: 1205px; 
+  }
+  th{
+    color: rgb(184, 12, 12);
+  }
+  table{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #bdc3c7;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0);
+  }
+  table th{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 130%;
+    text-align: left;
+    background-color: rgb(14, 4, 71); 
+    color: #FFF;
+    padding: 12px;
+    border-bottom: 1px solid;
+  }
+  table td{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 120%;
+    font-weight: 300;
+    text-align: left;
+    border: 1px solid #e3e3e3;
+    padding: 12px;
+    border-bottom: 1px solid;
+    
+  }
+  table tr:nth-child(odd) td{
+    background-color: #74748a;
+  }
+  

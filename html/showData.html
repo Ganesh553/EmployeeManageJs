@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.maim.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.maim.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="continer">
+        <div class="table-responsive">
+            <h1>Json Data</h1>
+            <table class="table table-bordered table-striped" id="employee_data">
+                <tr>
+                    <th>first_name</th>
+                    <th>last_name</th>
+                    <th>mail</th>
+                    <th>salary</th>
+                    <th>Department</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function call(){
+            $(document).ready(function(){
+                $.getJSON('http://localhost:3000/users', function(data){
+                    var Employee_data = '';
+                    $.each(data, function(key, value){
+                        Employee_data += '<tr>';
+                        Employee_data += '<td>'+value.first_name+'<td>';
+                        Employee_data += '<td>'+value.last_name+'<td>';
+                        Employee_data += '<td>'+value.mail+'<td>'; 
+                        Employee_data += '<td>'+value.salary+'<td>';
+                        Employee_data += '<td>'+value.department+'<td>';
+                        Employee_data += '</tr>';           
+                    });
+                    $('#employee_data').append(Employee_data);
+                    document.write(Employee_data)
+                });
+            });
+        }
+    call()
+</script>

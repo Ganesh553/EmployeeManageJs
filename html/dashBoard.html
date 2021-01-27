@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- <script type="text/javascript" src="/ajax/jquery/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="/ajax/jquery/plugins/jquery.random_plugin.js"></script> -->
+    
+    <title>Document</title>
+</head>
+<script>
+    function clickinner() { // Target refers to the clicked element
+        location.href='signup.html';
+    };
+</script>
+<body>
+    <div class="continer">
+        <!-- <h2 style="font-family:sans-serif;padding-left:60px; text-align:center">Employee Management System</h2> -->
+        <h1>Employee Management System</h1>
+            
+        <table id="employee_data">
+                <tr>
+                    <th>First-Name</th>
+                    <th>Last-Name</th>
+                    <th>Mail</th> 
+                    <th>Salary</th>
+                    <th>Department</th>
+                    
+                    <th>Editing</th>
+                    <th>Deleting</th>
+                </tr>
+                    <button class="text-button" onclick="clickinner();"> 
+                        <i class="fas fa-user-plus"></i> 
+                        Add-Employee
+                     </button>
+               
+
+        </table>
+    </div>
+    
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $.getJSON("http://localhost:3000/users", function(data){
+            console.log(data)
+            var Employee_data="";
+            $.each(data, function(key, value){
+                Employee_data +=`<tr>
+                 <td>${value.first_name}</td>
+                 <td>${value.last_name}</td>
+                 <td>${value.mail}</td>
+                 <td>${value.salary}</td>
+                 <td>${value.department}</td>
+                 <td>
+                    <i class="fas fa-user-edit"></i>
+                    <button>Editing</button> 
+                 </td>
+                 <td>
+                    <i class="fas fa-trash-alt"></i>
+                    <button onclick="deleteBook('+${value.id}+')">Deleting</button> 
+                 </td>
+
+                </tr>`
+            });
+            $('#employee_data').append(Employee_data)
+        });
+    });
+function deleteBook(id){
+    alert(id)
+    $.ajax({
+        url: "http://localhost:3000/users"+id,
+        type:"DELETE",
+        data: {"id": id},
+        contentType: "application/json",
+        success: function(data){
+            alert("record has been deleted")
+        },
+        error: function(error){
+            alert(error)
+        }
+    })
+}
+</script>
+
+<!-- json-server --watch db.json -->
+
+<!-- <script>
+    $(Document).ready(function(){
+        $.ajax({
+            type: 'POST',
+            url:"db.json",
+            dataType:"json",
+            success:function(data){
+                $(data.users)each(function(index, value){
+                    var record="<tr><td>"+(index+1)+"<tr><td>"+value.first_name+
+                        "<tr><td>"+value.last_name+"<tr><td>"+value.email+"<tr><td>"+
+                            value.salary+"<tr><td>"+value.department+"<tr><td>";
+                                $("table").append(record);
+                });
+            }
+        });
+    })
+</script> -->

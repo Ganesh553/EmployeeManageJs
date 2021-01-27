@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "first_name": "nksdn",
+      "last_name": "knv",
+      "email": "kkvf",
+      "salary": "4665",
+      "department": "comcs",
+      "id": 1
+    },
+    {
+      "first_name": "ganesh",
+      "last_name": "cksj",
+      "email": "cskjdcnk",
+      "salary": "56465",
+      "department": "jsdcbj",
+      "id": 2
+    },
+    {
+      "first_name": "aravind",
+      "last_name": "cnsk",
+      "email": "csnkjn",
+      "salary": "75816",
+      "department": "mech",
+      "id": 3
+    },
+    {
+      "first_name": "avinash",
+      "last_name": "biradar",
+      "email": "cskjn",
+      "salary": "64465",
+      "department": "comp",
+      "id": 4
+    },
+    {
+      "first_name": "souvik",
+      "last_name": "",
+      "email": "",
+      "salary": "",
+      "department": "",
+      "id": 5
+    }
+  ]
+}
